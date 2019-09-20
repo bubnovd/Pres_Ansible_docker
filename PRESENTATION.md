@@ -8,12 +8,16 @@ class: title, middle, center
 Keep it short.
 
 ---
+layout: false
+
 ## Кто я
 
 #### <span style="font-size: 1em; color: Mediumslateblue;"><i class="fas fa-user fa-fw"></i></span> Дмитрий Бубнов
+--
 #### <i class="fas fa-link fa-fw"></i> [Mikrotik Ninja](https://mikrotik-ninja.ru)
+--
 #### <i class="fas fa-home fa-fw"></i> Челябинск, Бишкек
-----
+
 #### <i class="fas fa-graduation-cap fa-fw"></i> Тренер Mikrotik
 #### <i class="fas fa-award fa-fw"></i> MTCNA, MTCRE, MTCTCE, MTCWE, MTCINE, CCNA R&S
 #### <i class="fas fa-network-wired fa-fw"></i> Сети
@@ -33,8 +37,11 @@ Keep it short.
 -   Тесты
 -   Культура
 - https://github.com/geerlingguy/awesome-ansible https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-overview-of-containerization
+- dOCKER ИНТЕГРИРУЕТСЯ С ОБЛАКАМИ
+- swarm
+- платформонезависимость
 
-You can find the content at https://github.com/while-true-do/clt2019-lecture
+Презентация доступна здесь https://devi1.github.io/Pres_Ansible_docker/
 
 ---
 class: title, middle, center
