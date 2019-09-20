@@ -1,6 +1,6 @@
 .title{
-  background-color: #ffffff;
-  color: #000000
+  background-color: #e6e6e6;
+  color: #2d0b3b
 }
 
 .remark-slide-content{
@@ -8,8 +8,13 @@
 }
 
 .page {
-  background-color: #ffffff;
-  color: #000000
+  background-color: #e6e6e6;
+  color: #2d0b3b
+}
+
+body {
+  background-color: #e6e6e6;
+  color: #2d0b3b
 }
 
 a{

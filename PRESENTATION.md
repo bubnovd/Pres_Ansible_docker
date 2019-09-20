@@ -5,19 +5,24 @@ class: title, middle, center
 
 <!-- Notes -->
 ???
-Keep it short.
+- Кратко о файлах и ансибле
+- Рутинные операции 
+- Массовые изменения
+- Повторяемость
+- Документирование
+- Версионирование
+- История изменений
+- Galaxy
+- Есть у меня два друга: Саня и Колян. Оба работают в аутсорсе - средненький такой аутсорс, по 10-20 компаний на обслуживании. Коля - ответственный, работящий парень. Может задержаться на работе, все делает до конца и правильно. Саша наоборот - лентяй, может на работе сериальчики посмотреть. И вообще - нелюбимый сотрудник у начальника. 
 
 ---
+class: page
 ## Кто я
 
-#### <span style="font-size: 1em; color: Mediumslateblue;"><i class="fas fa-user fa-fw"></i></span> Дмитрий Бубнов
-
---
-#### <i class="fas fa-link fa-fw"></i> [Mikrotik Ninja](https://mikrotik-ninja.ru)
-
---
-#### <i class="fas fa-home fa-fw"></i> Челябинск, Бишкек
-
+#### <span style="font-size: 1em; color: #2d0b3b;"><i class="fas fa-user fa-fw"></i></span> Дмитрий Бубнов 
+#### <span style="font-size: 1em; color: #5aa648;"><i class="fas fa-link fa-fw"></i></span> [Mikrotik Ninja](https://mikrotik-ninja.ru) 
+#### <i class="fas fa-home fa-fw"></i> Челябинск, Бишкек 
+----
 #### <i class="fas fa-graduation-cap fa-fw"></i> Тренер Mikrotik
 #### <i class="fas fa-award fa-fw"></i> MTCNA, MTCRE, MTCTCE, MTCWE, MTCINE, CCNA R&S
 #### <i class="fas fa-network-wired fa-fw"></i> Сети
@@ -28,11 +33,10 @@ Keep it short.
 ---
 ## <i class="fas fa-table fa-fw"></i> О чем будем говорить
 
--   Проблема
--   git
--   Ansible
--   Docker
--   Docker-compose
+-   <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="100"/> Ansible
+-   <img src="img/Git-Icon-Black.png" alt="git-logo" width="100"/> git
+-   <img src="img/docker-logo.png" alt="Docker-logo" width="100"/> Docker
+-   <img src="img/docker-compose.png" alt="Docker-compose-logo" width="100"/> Docker-compose
 -   IaaC
 -   Тесты
 -   Культура
@@ -42,6 +46,132 @@ Keep it short.
 - платформонезависимость
 
 Презентация доступна здесь https://devi1.github.io/Pres_Ansible_docker/
+
+---
+## Что такое Ansible
+----
+### Просто набор файлов!
+
+basic-project
+
+├── inventory
+
+│ ├── group_vars
+
+│ │ └── web.yml
+
+│ ├── host_vars
+
+│ │ └── db1.yml
+
+│ └── hosts
+
+└── site.yml
+
+---
+## Что такое Ansible
+----
+### Или так
+
+myapp
+
+├── roles
+
+│ ├── myapp
+
+│ │ ├── tasks
+
+│ │ │ └── main.yml
+
+│ │ └── ...
+
+│ ├── nginx
+
+│ │ └── ...
+
+│ └── proxy
+
+│ └── ...
+
+└── site.yml
+
+---
+## Нам срочно нужно 5 настроенных виртуалок
+----
+
+--
+- ### С установленными обновлениями
+
+--
+- ### С юзерами, группами и ключами
+
+--
+- ### С настроенным фаерволом
+
+--
+- ### С установленной и первоначально настроенной MongoDB
+
+
+---
+## Нам срочно нужно 5 настроенных виртуалок
+----
+
+# Автоматизация рутинных действий
+### Тут плэйбук
+
+
+---
+## Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
+----
+
+
+---
+## Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
+----
+
+# Массовые изменения
+### Тут плэйбук
+
+
+---
+## Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
+----
+
+
+
+---
+## Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
+----
+
+# Повторяемость
+### Тут плэйбук
+
+
+---
+## У нас новый сотрудник. Покажи ему как у нас все работает
+----
+
+
+---
+## У нас новый сотрудник. Покажи ему как у нас все работает
+----
+
+# Документирование
+### Тут скрин гитлаба
+
+
+
+---
+## Перестало работать видеонаблюдение
+
+
+
+---
+## Перестало работать видеонаблюдение
+
+
+## Версионирование. История изменений
+### тут Git
 
 ---
 class: title, middle, center
