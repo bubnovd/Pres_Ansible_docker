@@ -1,0 +1,22 @@
+.title{
+  background-color: #000000;
+  color: #ffffff
+}
+
+.remark-slide-content{
+  font-size: 25px;
+}
+
+.page {
+  background-color: #000000;
+  color: #ffffff
+}
+
+a{
+  color: rgb(34, 34, 241);
+}
+
+h2{
+  margin-bottom: 2rem;
+}
+
