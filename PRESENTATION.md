@@ -8,13 +8,13 @@ class: title, middle, center
 Keep it short.
 
 ---
-layout: false
-
 ## Кто я
 
 #### <span style="font-size: 1em; color: Mediumslateblue;"><i class="fas fa-user fa-fw"></i></span> Дмитрий Бубнов
+
 --
 #### <i class="fas fa-link fa-fw"></i> [Mikrotik Ninja](https://mikrotik-ninja.ru)
+
 --
 #### <i class="fas fa-home fa-fw"></i> Челябинск, Бишкек
 
