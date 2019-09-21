@@ -52,48 +52,35 @@ class: page
 ----
 ### Просто набор файлов!
 
+```
 basic-project
-
 ├── inventory
-
 │ ├── group_vars
-
 │ │ └── web.yml
-
 │ ├── host_vars
-
 │ │ └── db1.yml
-
 │ └── hosts
-
 └── site.yml
+```
 
 ---
 ## Что такое Ansible
 ----
 ### Или так
 
+```
 myapp
-
 ├── roles
-
 │ ├── myapp
-
 │ │ ├── tasks
-
 │ │ │ └── main.yml
-
 │ │ └── ...
-
 │ ├── nginx
-
 │ │ └── ...
-
 │ └── proxy
-
 │ └── ...
-
 └── site.yml
+```
 
 ---
 ## Нам срочно нужно 5 настроенных виртуалок
