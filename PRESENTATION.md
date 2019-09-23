@@ -320,7 +320,7 @@ prometheus_scrape_configs:
 ---
 ## Перестал работать бэкап
 ----
-<img src="img/git-diff.png" alt="git-diff">
+<img src="img/git-diff.png" alt="git-diff"/>
 
 ---
 ## Перестал работать бэкап
