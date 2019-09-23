@@ -13,6 +13,8 @@ class: title, middle, center
 - Версионирование
 - История изменений
 - Galaxy
+- Иммутабельность
+- Идемпотентность
 - Есть у меня два друга: Саня и Колян. Оба работают в аутсорсе - средненький такой аутсорс, по 10-20 компаний на обслуживании. Коля - ответственный, работящий парень. Может задержаться на работе, все делает до конца и правильно. Саша наоборот - лентяй, может на работе сериальчики посмотреть. И вообще - нелюбимый сотрудник у начальника. 
 
 ---
@@ -33,10 +35,10 @@ class: page
 ---
 ## <i class="fas fa-table fa-fw"></i> О чем будем говорить
 
--   <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="100"/> Ansible
--   <img src="img/Git-Icon-Black.png" alt="git-logo" width="100"/> git
--   <img src="img/docker-logo.png" alt="Docker-logo" width="100"/> Docker
--   <img src="img/docker-compose.png" alt="Docker-compose-logo" width="100"/> Docker-compose
+-   <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="30"/> Ansible
+-   <img src="img/Git-Icon-Black.png" alt="git-logo" width="30"/> git
+-   <img src="img/docker-logo.png" alt="Docker-logo" width="30"/> Docker
+-   <img src="img/docker-compose.png" alt="Docker-compose-logo" width="30"/> Docker-compose
 -   IaaC
 -   Тесты
 -   Культура
@@ -48,7 +50,7 @@ class: page
 Презентация доступна здесь https://devi1.github.io/Pres_Ansible_docker/
 
 ---
-## Что такое Ansible
+## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Что такое Ansible
 ----
 ### Просто набор файлов!
 
@@ -62,12 +64,11 @@ basic-project
 │ └── hosts
 └── site.yml
 ```
-
+???
+From [here](https://www.ansible.com/hubfs/2018_Content/AA%20BOS%202018%20Slides/Ansible%20Best%20Practices.pdf)
 ---
-## Что такое Ansible
+## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Или так
 ----
-### Или так
-
 ```
 myapp
 ├── roles
@@ -83,6 +84,71 @@ myapp
 ```
 
 ---
+## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Inventory
+----
+```
+monitoring ansible_host=10.0.0.11 ansible_user=ansible ansible_port=222  ansible_sudo_pass="{{ vault_ansible_sudo_pass  }}"
+
+[prometheus]
+monitoring
+
+[mikrotik-exporter]
+monitoring
+
+[grafana]
+monitoring
+```
+
+---
+## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Playbook
+----
+```
+- name: Deploy prometheus
+  hosts: prometheus
+  roles:
+    - ansible-prometheus
+  tags:
+    - prometheus
+    - monitoring
+
+- name: Deploy mikrotik-exporter
+  hosts: mikrotik-exporter
+  roles:
+    - ansible-mikrotik-exporter
+  tags:
+    - monitoring
+    - mikrotik-exporter    
+
+- name: Deploy grafana
+  hosts: grafana
+  roles:
+    - ansible-grafana
+  tags:
+    - grafana
+    - monitoring
+```
+---
+## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Запуск плэйбука
+----
+`ansible-playbook -i inventory.yml monitoring-playbook.yml`
+
+или для отдельной роли
+
+`ansible-playbook -i inventory.yml monitoring-playbook.yml --tags=prometheus`
+
+---
+## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Готовые плэйбуки
+----
+[cloudalchemy/ansible-prometheus](https://github.com/cloudalchemy/ansible-prometheus)
+
+[geerlingguy/ansible-role-mysql](https://github.com/geerlingguy/ansible-role-mysql)
+
+
+
+### Тысячи их
+
+[Ansible Galaxy](https://galaxy.ansible.com/)
+---
 ## Нам срочно нужно 5 настроенных виртуалок
 ----
 
@@ -96,76 +162,185 @@ myapp
 - ### С настроенным фаерволом
 
 --
-- ### С установленной и первоначально настроенной MongoDB
+- ### С установленной и первоначально настроенной MySQL
+
+--
+- ### Не забудь добавить их в мониторинг
 
 
 ---
 ## Нам срочно нужно 5 настроенных виртуалок
 ----
 
-# Автоматизация рутинных действий
-### Тут плэйбук
+```
+- name: Postinstall configure
+  hosts: all
+  roles:
+    - postinstall-config
+  tags:
+    - postinstall
 
+- name: Deploy MySQL
+  hosts: mysql
+  roles:
+    - ansible-role-mysql
+  tags:
+    - database
+    - mysql
+```
+--
+## Автоматизация рутинных действий
 
 ---
 ## Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
 ----
 
+--
+- ### 10 клиентов по 10 роутеров у каждого
+
+--
+- ### Часть может быть оффлайн
+
+--
+- ### При повторном запуске не должны создаваться дублирующие правила
 
 ---
 ## Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
 ----
+```
+  - name: add allowed addresses to list
+    routeros_command:
+      commands: "/ip firewall address-list add list=allow address={{ item }}"
+    with_items:
+      - "{{ routeros_list_allow }}"
 
-# Массовые изменения
-### Тут плэйбук
+  - name: drop input except allow list
+    routeros_command:
+      commands: "{{ item }}"
+    with_items:
+      - /ip firewall filter add chain=input src-address-list=allow action=accept
+      - /ip firewall filter add chain=input action=drop
+```
+
+--
+## Массовые изменения
 
 
 ---
 ## Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
 ----
 
+--
+- ### А на чем мы делали? Гугл показывает libreswan, strongswan, openswan, xl2tpd
+
+--
+- ### А как мы там роуты то прописали?
+
+--
+- ### Что-то не заводится сразу, видимо что-то забыли
 
 
 ---
 ## Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
 ----
-
-# Повторяемость
-### Тут плэйбук
+```
+- name: Magic playbook
+  hosts: сидящие_в_зале
+  roles: 
+    - тут_должны_быть_роли
+    - но_я_думаю_вы_и_так_все_поняли
+```
+--
+## Повторяемость
 
 
 ---
 ## У нас новый сотрудник. Покажи ему как у нас все работает
 ----
 
+--
+- ### 10 клиентов
+
+--
+- ### Естественно, все они разные
+
+--
+- ### Документация. Какая документация?
+
 
 ---
 ## У нас новый сотрудник. Покажи ему как у нас все работает
 ----
+cat ansible/group_vars/prometheus.yml
+```
+prometheus_storage_retention: "500d"
+prometheus_storage_retention_size: "40GB"
+prometheus_web_listen_address: "localhost:9090"
 
-# Документирование
-### Тут скрин гитлаба
+prometheus_alertmanager_config:
+  - scheme: http
+    static_configs:
+      - targets:
+        - "127.0.0.1:9093"
 
-
+prometheus_scrape_configs:
+  - job_name: "mikrotik"
+    scrape_timeout: "60s"
+    scrape_interval: "120s"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets:
+        - "127.0.0.1:9436"
+```
 
 ---
-## Перестало работать видеонаблюдение
-
-
+## У нас новый сотрудник. Покажи ему как у нас все работает
+----
+### Документирование
 
 ---
-## Перестало работать видеонаблюдение
+## Перестал работать бэкап
+----
 
+--
+- ### Я что-то нажал и главный роутер у клиента сломался
 
-## Версионирование. История изменений
-### тут Git
+--
+- ### С 15 июля нет бэкапов с микротиков
+
+--
+- ### СРОЧНО ВОССТАНОВИ!!!!111один
+
+---
+## Перестал работать бэкап
+----
+<img src="img/git-diff.png" alt="git-diff">
+
+---
+## Перестал работать бэкап
+----
+### <img src="img/Git-Icon-Black.png" alt="git-logo" width="50"/> Git 
+### Версионирование. История изменений
+
+---
+## Так какие задачи решает Ansible?
+----
+
+### 1. Автоматизация рутинных действий
+### 2. Массовые изменения
+### 3. Повторяемость конфигураций
+### 4. Документирование
+### 5. Версионирование. История изменений
 
 ---
 class: title, middle, center
 
-## Ansible
+## Docker
 
-Ansible loves repetitive work, that you hate.
+---
+## Docker
+----
+Я же пр
 
 ---
 
