@@ -1,24 +1,16 @@
 .title{
-  background-color: #e6e6e6;
-  color: #2d0b3b
+  background-color: black;
+  color: #ebebeb
 }
 
 .remark-slide-content{
   font-size: 25px;
-}
-
-.page {
-  background-color: #e6e6e6;
-  color: #2d0b3b
-}
-
-body {
-  background-color: #e6e6e6;
-  color: #2d0b3b
+  background-color: black;
+  color: #ebebeb
 }
 
 a{
-  color: rgb(34, 34, 241);
+  color: #5aa648;
 }
 
 h2{

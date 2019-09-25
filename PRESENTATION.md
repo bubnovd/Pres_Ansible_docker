@@ -21,36 +21,58 @@ class: title, middle, center
 - 
 
 ---
-class: page
 ## Кто я
-
-#### <span style="font-size: 1em; color: #2d0b3b;"><i class="fas fa-user fa-fw"></i></span> Дмитрий Бубнов 
-#### <span style="font-size: 1em; color: #5aa648;"><i class="fas fa-link fa-fw"></i></span> [Mikrotik Ninja](https://mikrotik-ninja.ru) 
-#### <i class="fas fa-home fa-fw"></i> Челябинск, Бишкек 
 ----
-#### <i class="fas fa-graduation-cap fa-fw"></i> Тренер Mikrotik
-#### <i class="fas fa-award fa-fw"></i> MTCNA, MTCRE, MTCTCE, MTCWE, MTCINE, CCNA R&S
-#### <i class="fas fa-network-wired fa-fw"></i> Сети
-#### <i class="fas fa-chart-line fa-fw"></i> Мониторинг
-#### <i class="fas fa-magic fa-fw"></i> Автоматизация
 
+<h3>
+<table>
+  <tr>
+    <td><span style="font-size: 1em;"><i class="fas fa-user fa-fw"></i></span></td>
+    <td>Дмитрий Бубнов</td>
+    <td colspan="3" rowspan="7" bgcolor="white"><img src="img/MN-logo.png" alt="MN-logo" width="500"/></td>
+  </tr>
+  <tr>
+    <td><i class="fas fa-home fa-fw"></i></td>
+    <td>Челябинск, Бишкек</td>
+  </tr>
+  <tr>
+    <td><i class="fas fa-graduation-cap fa-fw"></i></td>
+    <td>Тренер Mikrotik</td>
+  </tr>
+  <tr>
+    <td><i class="fas fa-award fa-fw"></i></td>
+    <td>MTCNA, MTCRE, MTCTCE, MTCWE, MTCINE, CCNA R&S</td>
+  </tr>
+  <tr>
+    <td><i class="fas fa-network-wired fa-fw"></i></td>
+    <td>Сети</td>
+  </tr>
+  <tr>
+    <td><i class="fas fa-chart-line fa-fw"></i></td>
+    <td>Мониторинг</td>
+  </tr>
+  <tr>
+    <td><i class="fas fa-magic fa-fw"></i></td>
+    <td>Автоматизация</td>
+  </tr>
+</table>
+</h3>
+
+---
+![Sysadminka](img/sysadminka.png)
 
 ---
 ## <i class="fas fa-table fa-fw"></i> О чем будем говорить
+----
 
--   <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="30"/> Ansible
--   <img src="img/Git-Icon-Black.png" alt="git-logo" width="30"/> git
--   <img src="img/docker-logo.png" alt="Docker-logo" width="30"/> Docker
--   <img src="img/docker-compose.png" alt="Docker-compose-logo" width="30"/> Docker-compose
--   IaaC
--   Тесты
--   Культура
-- https://github.com/geerlingguy/awesome-ansible https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-overview-of-containerization
-- dOCKER ИНТЕГРИРУЕТСЯ С ОБЛАКАМИ
-- swarm
-- платформонезависимость
+- ### Ansible
+- ### Git
+- ### Infrastructure as a Code
+- ### Test-Driven Development
+- ### Docker
+- ### CI/CD
+- ### Культура
 
-Презентация доступна здесь https://devi1.github.io/Pres_Ansible_docker/
 
 ---
 ## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Что такое Ansible
@@ -69,6 +91,7 @@ basic-project
 ```
 ???
 From [here](https://www.ansible.com/hubfs/2018_Content/AA%20BOS%202018%20Slides/Ansible%20Best%20Practices.pdf)
+
 ---
 ## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Или так
 ----
@@ -130,6 +153,7 @@ monitoring
     - grafana
     - monitoring
 ```
+
 ---
 ## <img src="img/Ansible-logo-1.png" alt="Ansible-logo" width="70"/> Запуск плэйбука
 ----
@@ -151,8 +175,9 @@ monitoring
 ### Тысячи их
 
 [Ansible Galaxy](https://galaxy.ansible.com/)
+
 ---
-## Нам срочно нужно 5 настроенных виртуалок
+## <i class="fas fa-wrench fa-fw"></i> Нам срочно нужно 5 настроенных виртуалок
 ----
 
 --
@@ -172,7 +197,7 @@ monitoring
 
 
 ---
-## Нам срочно нужно 5 настроенных виртуалок
+## <i class="fas fa-wrench fa-fw"></i> Нам срочно нужно 5 настроенных виртуалок
 ----
 
 ```
@@ -195,7 +220,7 @@ monitoring
 ## Автоматизация рутинных действий
 
 ---
-## Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
+## <i class="fas fa-wrench fa-fw"></i> Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
 ----
 
 --
@@ -208,7 +233,7 @@ monitoring
 - ### При повторном запуске не должны создаваться дублирующие правила
 
 ---
-## Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
+## <i class="fas fa-wrench fa-fw"></i> Нашли баг в Mikrotik, срочно закрой доступ к роутерам!
 ----
 ```
   - name: add allowed addresses to list
@@ -230,7 +255,7 @@ monitoring
 
 
 ---
-## Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
+## <i class="fas fa-wrench fa-fw"></i> Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
 ----
 
 --
@@ -244,7 +269,7 @@ monitoring
 
 
 ---
-## Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
+## <i class="fas fa-wrench fa-fw"></i> Помнишь, мы настраивали IPSec три месяца назад? Надо сделать так же новому клиенту
 ----
 ```
 - name: Magic playbook
@@ -261,7 +286,7 @@ monitoring
 
 
 ---
-## У нас новый сотрудник. Покажи ему как у нас все работает
+## <i class="fas fa-wrench fa-fw"></i> У нас новый сотрудник. Покажи ему как у нас все работает
 ----
 
 --
@@ -275,7 +300,7 @@ monitoring
 
 
 ---
-## У нас новый сотрудник. Покажи ему как у нас все работает
+## <i class="fas fa-wrench fa-fw"></i> У нас новый сотрудник. Покажи ему как у нас все работает
 ----
 cat ansible/group_vars/prometheus.yml
 ```
@@ -300,12 +325,12 @@ prometheus_scrape_configs:
 ```
 
 ---
-## У нас новый сотрудник. Покажи ему как у нас все работает
+## <i class="fas fa-wrench fa-fw"></i> У нас новый сотрудник. Покажи ему как у нас все работает
 ----
 ### Документирование
 
 ---
-## Перестал работать бэкап
+## <i class="fas fa-wrench fa-fw"></i> Перестал работать бэкап
 ----
 
 --
@@ -318,18 +343,18 @@ prometheus_scrape_configs:
 - ### СРОЧНО ВОССТАНОВИ!!!!111один
 
 ---
-## Перестал работать бэкап
+## <i class="fas fa-wrench fa-fw"></i> Перестал работать бэкап
 ----
 <img src="img/git-diff.png" alt="git-diff"/>
 
 ---
-## Перестал работать бэкап
+## <i class="fas fa-wrench fa-fw"></i> Перестал работать бэкап
 ----
 ### <img src="img/Git-Icon-Black.png" alt="git-logo" width="50"/> Git 
 ### Версионирование. История изменений
 
 ---
-## Так какие задачи решает Ansible?
+## <i class="fas fa-spinner fa-fw"></i> Так какие задачи решает Ansible?
 ----
 
 ### 1. Автоматизация рутинных действий
@@ -338,475 +363,181 @@ prometheus_scrape_configs:
 ### 4. Документирование
 ### 5. Версионирование. История изменений
 
+
 ---
 class: title, middle, center
 
-## Docker
+# Test Driven Development
 
 ---
-## Docker
+##  <i class="fas fa-vial fa-fw"></i> TDD
 ----
-Я же пр
+
+- ### Test Driven Development
+- ### Неплохо было бы проверять плэйбуки перед их выпуском на боевую инфраструктуру
+- ### Для этого есть специальные инструменты
 
 ---
+## <i class="fas fa-vial fa-fw"></i> Разработка через тесты
+----
 
-## Ansible
-
--   Cloud Provisioning
--   Configuration Management
--   Infrastructure Automation
--   Container (Docker, CRI-O, ...)
--   Orchestration
--   Workstation Post Installations(!!!)
-
----
-class: title, middle, center
-
-## Use Case(s)
-
-You can automate windows, mac and linux.
-
-???
-Since this is CLT, we focus on Linux.
+<table>
+  <tr>
+    <td>Testinfra</td>
+    <td colspan="2" rowspan="3"><img src="img/testinfra.png" alt="testinfra-logo" width="500"/></td>
+  </tr>
+  <tr>
+    <td>Пишем тесты, проверяющие систему</td>
+  </tr>
+  <tr>
+    <td>Подгоняем плэйбуки под выполнение этих тестов</td>
+  </tr>
+</table>
 
 ---
-class: title, middle, center
+## <i class="fas fa-hat-wizard fa-fw"></i> Molecule
+----
 
-## Installing Ansible
+<table>
+  <tr>
+    <td>Первоначальная инициализация роли</td>
+    <td colspan="2" rowspan="4"><img src="img/molecule.png" alt="molecule-logo" width="500"/></td>
+  </tr>
+  <tr>
+    <td>Тесты на идемпотентность</td>
+  </tr>
+  <tr>
+    <td>Верификация</td>
+  </tr>
+  <tr>
+    <td>Driver/Provider</td>
+  </tr>
+</table>
 
-Ansible is built for most major distributions.
-
----
-## <i class="fas fa-terminal fa-fw"></i> Installing Ansible
-
-In most distributions, you just need to use the proper package manager.
-
-```
-# Fedora
-sudo dnf install ansible
-# RedHat, CentOs, SCL, Oracle Linux
-sudo yum install ansible
-# Debian / Ubuntu
-sudo apt-get install ansible
-# SuSE Linux
-sudo zypper install ansible
-```
-
-???
-Recommendation: pip + virtualenv
 
 ---
-## <i class="fas fa-terminal fa-fw"></i> Installing Ansible
+## <i class="fas fa-hat-wizard fa-fw"></i> Molecule. Первоначальная инициализация роли
+----
 
-You can use virtualenv / pip, too.
-
-```
-# Via virtualenv/pip
-# Additional steps may be needed for selinux
-virtualenv --no-site-packages <ENV>
-source <ENV>/bin/activate
-pip install ansible
-```
+### В случае указания новой роли создает типовую структуру для роли ansible
 
 ---
-class: title, middle, center
+## <i class="fas fa-hat-wizard fa-fw"></i> Molecule. Тесты на идемпотентность
+----
 
-## Creating the Playbook
-
-Playbook => technical term for a \*.yaml file
+###  При повторном запуске роли не должно быть произведено каких-либо изменений
 
 ---
-## <i class="fas fa-file-code fa-fw"></i> Creating the Playbook
+## <i class="fas fa-hat-wizard fa-fw"></i> Molecule. Верификация
+----
 
-You only need one file for now.
+- ### Автоматический прогон тестов
 
-```
-touch workstation.yml
-```
+<img src="img/testinfra.png" alt="testinfra-logo" width="500"/>
 
-Add a few lines of [YAML](https://yaml.org/) code.
 
-```
-# workstation.yml
 ---
-- hosts: localhost
-  connection: local
-  become: yes
-  tasks:
-```
+## <i class="fas fa-hat-wizard fa-fw"></i> Molecule. Driver/Provider
+----
+
+- ### Необязательно гонять тесты на заранее созданных виртуалках
+- ### Vagrant
+  - ### Libvirt
+  - ### Parallels
+  - ### VirtualBox (default)
+  - ### VMware Fusion
+- ### Docker
 
 ---
 class: title, middle, center
 
-## User
-
-User and group management is included and easy.
+## Docker
 
 ---
-## <i class="fas fa-user fa-fw"></i> User
+## <i class="fab fa-docker fa-fw"></i> Docker
+----
 
-You can manage
-[user](https://docs.ansible.com/ansible/latest/modules/user_module.html) accounts.
+- ### Позволяет запускать приложения в изолированном окружении
+- ### Прекрасный инструмент для "пощупать как оно работает"
+- ### Поматросил и бросил - контейнер не стоит ничего
+- ### Легко мигрировать на другую машину
 
-```
-# workstation.yml
----
-..snip..
+--
+- ### ... или в другую серверную
 
-  tasks:
-    - name: Create User ds
-      user:
-        name: ds
-        comment: Daniel
-        groups: wheel
-        append: True
-        state: present
-
-..snap..
-```
-
----
-## <i class="fas fa-user fa-fw"></i> User
-
-You can also manage
-[groups](https://docs.ansible.com/ansible/latest/modules/group_module.html).
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Create Group developers
-      group:
-        name: developers
-        state: present
-
-..snap..
-```
+--
+- ### ... или в облако AWS, GCP, Azure, ...
 
 ---
 class: title, middle, center
 
-## Packages
-
-Install, Remove and Update your software.
+# Continuous Integration and Continuous Deployment
 
 ---
-## <i class="fas fa-cube fa-fw"></i> Packages
+## <i class="fab fa-gitlab fa-fw"></i> CI/CD
+----
 
-Easily update
-[packages](https://docs.ansible.com/ansible/latest/modules/package_module.html).
+- ### А зачем мне вся эта куча технологий, если и так всё работает?
+- ### Но ведь уходит много времени на: 
+  - ### написать плэйбук
+  - ### написать тесты
+  - ### запустить тесты
+  - ### перенести конфиг на боевую инфраструктуру
+  - ### настроить всю эту чепуху
 
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Update System
-      package:
-        name: "*"
-        state: latest
-
-..snap..
-```
 
 ---
-## <i class="fas fa-cube fa-fw"></i> Packages
-
-Let's remove some leftovers and unused packages.
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Remove Gnome Classic
-      package:
-        name: gnome-classic-session
-        state: absent
-
-    - name: Remove Anaconda Leftovers
-      package:
-        name: anaconda
-        state: absent
-
-..snap..
-```
----
-
-## <i class="fas fa-cube fa-fw"></i> Packages
-
-It's a piece of cake to use
-[variables](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html).
-
-```
-# workstation.yml
----
-..snip..
-
-  vars:
-    vm_guest_packages:
-      - open-vm-tools
-      - virtualbox-guest-additions
-      - qemu-guest-agent
-
-  tasks:
-    - name: Remove VM Guest Packages
-      package:
-        name: "{{ vm_guest_packages }}"
-        state: absent
-
-..snap..
-```
-
----
-
-## <i class="fas fa-cube fa-fw"></i> Packages
-
-Installing additional packages is easy, too.
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Install tuned
-      package:
-        name: tuned
-        state: present
-
-..snap..
-```
-
----
-class: title, middle, center
-
-## Services
-
-Managing services is easy, too.
-
----
-## <i class="fas fa-spinner fa-fw"></i> Services
-
-Sometimes, you want to start and enable a
-[service](https://docs.ansible.com/ansible/latest/modules/service_module.html).
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Start and Enable tuned
-      service:
-        name: tuned
-        state: started
-        enabled: true
-
-..snap..
-```
-
----
-## <i class="fas fa-spinner fa-fw"></i> Services
-
-Sometimes, you want to have a service restarted.
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Restart tuned
-      service:
-        name: tuned
-        state: restarted
-
-..snap..
-```
-
----
-## <i class="fas fa-spinner fa-fw"></i> Services
-
-And sometimes, you want to do something after some other task with
-[handlers](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#handlers-running-operations-on-change).
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Install tuned
-      package:
-        name: tuned
-        state: present
-      notify: Start and Enable tuned
-
-  handlers:
-    - name: Start and Enable tuned
-      service:
-        name: tuned
-        state: started
-        enabled: true
-
-..snap..
-```
-
----
-class: title, middle, center
-
-## Configuration
-
-Doing Configurations is also quite easy.
-
----
-## <i class="fas fa-wrench fa-fw"></i> Configuration
-
-Sometimes, you need to perform
-[commands](https://docs.ansible.com/ansible/latest/modules/command_module.html)
-or [copy](https://docs.ansible.com/ansible/latest/modules/copy_module.html) a
-file.
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Backup current dconf
-      command: dconf dump / > .config/dconf.dump
-
-    - name: Copy Wallpaper
-      copy:
-        src: files/wallpaper.jpg
-        dest: /home/ds/pictures/wallpaper.jpg
-        owner: ds
-        group: ds
-
-..snap..
-```
-
----
-## <i class="fas fa-wrench fa-fw"></i> Configuration
-
-Maybe, you want to enable Gnomes Night Light Feature via
-[dconf](https://docs.ansible.com/ansible/latest/modules/dconf_module.html).
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Enable Night Light
-      dconf:
-        key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
-        value: "true"
-..snap..
-```
----
-## <i class="fas fa-wrench fa-fw"></i> Configuration
-
-Maybe, you want to set a wallpaper.
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Set Gnome Wallpaper
-      dconf:
-        key: "/org/gnome/desktop/background/picture-uri"
-        value: "'file:///home/ds/Pictures/wallpaper.jpg'"
-
-..snap..
-```
-
----
-class: title, middle, center
-
-## Flatpak
-
-There is this thingy, everybody is talking about.
-
----
-## <i class="fas fa-cube fa-fw"></i> Flatpak
-
-First, you want to add a [repository](https://docs.ansible.com/ansible/latest/modules/flatpak_remote_module.html).
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Add the flathub repository
-      flatpak_remote:
-        name: flathub
-        state: present
-        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-
-..snap..
-```
-
----
-## <i class="fas fa-cube fa-fw"></i> Flatpak
-
-Afterwars, install a
-[flatpak](https://docs.ansible.com/ansible/latest/modules/flatpak_module.html)
-from flathub.
-
-```
-# workstation.yml
----
-..snip..
-
-  tasks:
-    - name: Install Atom Flatpak
-      flatpak:
-        name: io.atom.Atom
-        state: present
-
-..snap..
-```
+## <i class="fab fa-gitlab fa-fw"></i> CI/CD
+----
+
+  - ### pipeline
+  - ### Все делается автоматически:
+    - ### git commit запускает тесты
+    - ### при успешном прохождении тестов код разливается на prod
+    - ### ваше время тратится только на единоразовую настройку системы
+    - ### ... ну ОК, ещё на написание тестов и плэйбуков
 
 ---
 class: title, middle, center
 
 ## Demo
 
-Let's see this in action. Running the [workstation.yml](./material/workstation.yml)
+Возможно, я уже выложил плэйбуки для деплоя мониторинга сети на  [GitHub](https://github.com/devi1/ansible)
 
 ---
-## <i class="fas fa-hands-helping fa-fw"></i> Propaganda
+## <i class="fas fa-info fa-fw"></i> Информация
 
-#### Ansible
+#### Технологии
 
--   [ansible website](https://www.ansible.com)
--   [ansible community](https://www.ansible.com/community)
--   [ansible github](https://github.com/ansible)
--   [Meetup Dresden](https://www.meetup.com/de-DE/Ansible-Dresden/)
+-   [Ansible Galaxy](https://galaxy.ansible.com)
+-   [Ansible Community](https://www.ansible.com/community)
+-   [Awesome Ansible List](https://github.com/geerlingguy/awesome-ansible)
+-   [Molecule](https://habr.com/ru/post/437216/)
+-   [Docker](https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-overview-of-containerization)
 
-#### while-true-do.io
 
--   [WTD website](https://while-true-do.io)
--   [WTD github](https://github.com/while-true-do)
--   [WTD twitter](https://twitter.com/wtd_news)
+#### Презентация
+https://devi1.github.io/Pres_Ansible_docker/
 
-#### Profi.com AG (Sponsor)
+#### Инструменты, которыми сделана эта презентация
 
--   [proficom.de](https://www.proficom.de/)
-
+-  [markdown](https://daringfireball.net/projects/markdown/)
+-  [remark](https://github.com/gnab/remark)
+-  [font-awesome](https://fontawesome.com/)
+-  [Visual Studio Code](https://code.visualstudio.com/)
+-  [hands](http://www.bubnovd.net)
 ---
-class: title, middle, center
+## <i class="fas fa-hands-helping fa-fw"></i> Контакты
+----
 
-## Fin
+### <i class="fas fa-link fa-fw"></i> https://mikrotik-ninja.ru
+### <i class="fab fa-telegram-plane fa-fw"></i> @mikrotikninja
+### <i class="fab fa-telegram-plane fa-fw"></i> @sysadminka
+### <i class="fab fa-telegram-plane fa-fw"></i> @bubnov
+----
 
-Thank you so much for participating and please feel free to join us at the
-ansible community booth.
+### <i class="fab fa-facebook-f fa-fw"></i><i class="fab fa-vk fa-fw"></i><i class="fab fa-twitter fa-fw"></i><i class="fab fa-linkedin-in fa-fw"></i><i class="fab fa-instagram fa-fw"></i><i class="fab fa-github fa-fw"></i>: 
+### \- mikrotikninja
+### \- sysadminka
+###  \- bubnov
+

@@ -32,7 +32,7 @@ input[type="button"].button-lg {
   padding: 0 2rem;
 }
 code {
-  background-color: #dddddd;
+  background-color: #4e4e4e;
   padding: 0 .3rem;
   border-radius: .2rem;
 }
@@ -45,7 +45,7 @@ kbd {
 pre {
   border-left-style: solid;
   border-left-color: #222222;
-  background-color: #dddddd;
+  background-color: #4e4e4e;
   border-left-width: .3rem;
   margin: 0;
   padding-left: 1rem;
