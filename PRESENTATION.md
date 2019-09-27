@@ -1,6 +1,9 @@
 class: title, middle, center
 <!-- css classes -->
 
+<img src="img/opensysconf.png" alt="opensysconf-logo" width="300"/>
+
+## Open SysConf '19
 # Ansible and Docker for Sysadmin
 
 <!-- Notes -->
